@@ -3,24 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
   mostrarPaginaUsuarios(1);
   borrarAlertas();
 
-  buscadorPorNombre();
+  buscadorPorEmail();
 });
 
-async function mostrarPaginaUsuarios(page, nombre='') {
+async function mostrarPaginaUsuarios(page, email='') {
   //console.log(page, nombre);
   try {
-    const url = "/index.php/paginacion?page=" + page + "&nombre=" + nombre;
+    const url = "/index.php/paginacion?page=" + page + "&email=" + email;
     //console.log(url);
     const resultado = await fetch(url, { method: "GET" });
     respuesta = await resultado.json();
-    crearTabla(respuesta, nombre);
+    crearTabla(respuesta, email);
   } catch (e) {
     console.log(e);
   }
 }
 
-function crearTabla(respuesta, nombre) {
-
+function crearTabla(respuesta, email) {
   const { current_page, records, records_by_page, total_records } = respuesta;
 
   const infoUsuarios = document.querySelector("#infoUsuarios");
@@ -87,9 +86,13 @@ function crearTabla(respuesta, nombre) {
 
     infoUsuarios.appendChild(nuevoTr);
   } // Fin del for
-
+  
+  escucharBotonesBorrar();
   // Si buscamos por nombre, no se crea las flechas para cambiar de página
-  if(nombre === ''){
+  if(email === ''){
+    if (document.querySelector("#salir")) {
+      document.querySelector("#salir").remove();
+    }
     crearPaginador(current_page, records_by_page, total_records);
   } else {
     if (document.querySelector("#paginacion-agenda")) {
@@ -98,11 +101,11 @@ function crearTabla(respuesta, nombre) {
       if (!document.querySelector("#salir")) {
       btnSalir = document.createElement('a');
       btnSalir.id = 'salir';
-      btnSalir.className = "btn btn-lg mt-0 boton-rojo mb-5 center";
+      btnSalir.className = "btn btn-lg mt-0 boton-rojo mb-5 center p-4";
       btnSalir.href = "/index.php/admin";
       btnSalir.textContent = 'SALIR DEL MODO BUSCAR';
 
-      console.log(btnSalir);
+      //console.log(btnSalir);
 
       padre = document.getElementById("no-more-tables");
 
@@ -215,6 +218,57 @@ function crearPaginador(current_page, records_by_page, total_records) {
   escucharBotones();
 }
 
+function escucharBotonesBorrar() {
+  borrarUsuario = document.getElementsByClassName("borrarUsuario");
+
+  for (let i = 0; i < borrarUsuario.length; i++) {
+    const btn = borrarUsuario[i];
+
+    btn.addEventListener("click", function () {
+      //console.log(this.value)
+
+      Swal.fire({
+        title:
+          "¿Estás seguro de querer eliminar al usuario con  la  id " +
+          this.value +
+          "?",
+        text: "¡Este cambio no se puede revertir!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "¡Sí, eliminarlo!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          try {
+            const url = "/index.php/admin/borrarUsuario?id="+this.value+"";
+            //console.log(url);
+            fetch(url, { method: "GET"});
+  
+          } catch (e) {
+            console.log(e);
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: '¡No se ha podido borrar el usuario, contacte con el administrador!',
+              //footer: '<a href="">Why do I have this issue?</a>'
+            })
+          }
+          Swal.fire(
+            "¡Borrado!",
+            " El usuario ha sido borrado correctamente",
+            "success"
+          );
+          //setTimeout(() => {
+          mostrarPaginaUsuarios(1);
+          //document.location.reload(true)
+         // },2000)  
+        }
+      })
+    });
+  }
+}
+
 function escucharBotones() {
   primera = document.querySelector("#primera");
   if (primera.value != null) {
@@ -243,58 +297,10 @@ function escucharBotones() {
       mostrarPaginaUsuarios(Math.ceil(ultima.value));
     });
   }
-
-  borrarUsuario = document.getElementsByClassName("borrarUsuario");
-
-  for (let i = 0; i < borrarUsuario.length; i++) {
-    const btn = borrarUsuario[i];
-
-    btn.addEventListener("click", function () {
-      //console.log(this.value)
-
-      Swal.fire({
-        title:
-          "¿Estás seguro de querer eliminar al usuario con  la  id " +
-          this.value +
-          "?",
-        text: "¡Este cambio no se puede revertir!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "¡Sí, eliminarlo!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          try {
-            const url = "/index.php/admin/borrarUsuario?id="+this.value+"";
-            console.log(url);
-            fetch(url, { method: "GET"});
   
-          } catch (e) {
-            console.log(e);
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: '¡No se ha podido borrar el usuario, contacte con el administrador!',
-              //footer: '<a href="">Why do I have this issue?</a>'
-            })
-          }
-          Swal.fire(
-            "¡Borrado!",
-            " El usuario ha sido borrado correctamente",
-            "success"
-          );
-          //setTimeout(() => {
-          mostrarPaginaUsuarios(1);
-          //document.location.reload(true)
-         // },2000)  
-        }
-      })
-    });
-  }
 }
 
-function buscadorPorNombre() {
+function buscadorPorEmail() {
 
   buscador = document.getElementById("buscador");
 
@@ -311,9 +317,13 @@ function buscadorPorNombre() {
     mostrarPaginaUsuarios(1, buscador.value);
   })
 
+  // Al poner el raton por la tabla quito el foco en el buscador por que sino había que hacer doble click
+  table = document.querySelector(".table");
+  table.addEventListener("mouseover", () =>{
+    buscador.blur();
+  })
+
 }
-
-
 
 function borrarAlertas() {
   const alertas = document.querySelectorAll(".alerta");

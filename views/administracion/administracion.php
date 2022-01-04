@@ -15,7 +15,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 
         <div class="input-group mt-3">
             <span class="input-group-text" id="basic-addon1">@</span>
-            <input id="buscador" type="text" class="form-control" placeholder="Buscar por Nombre" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="buscador" type="text" class="form-control" placeholder="Buscar por Email" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <div id="marcadorPagina">

@@ -58,9 +58,9 @@ class ActiveRecord {
         return $resultado;
     }
 
-    public static function paginadoByName($limit, $offset, $nombre){
+    public static function paginadoByEmail($limit, $offset, $email){
 
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE nombre LIKE " . $nombre . " LIMIT ${limit} OFFSET ${offset} ";   
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE email LIKE " . $email . " LIMIT ${limit} OFFSET ${offset} ";   
        
         $resultado = self::consultarSQL($query);
 

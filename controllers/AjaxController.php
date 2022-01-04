@@ -47,12 +47,12 @@ class AjaxController
             $response['total_records'] = count($info);
 
             // Obtenemos los registros para la "pagina actual"
-            if($_GET['nombre'] != ''){
+            if($_GET['email'] != ''){
 
-                $nombre = "' %".$_GET['nombre']."%'";
+                $nombre = "'%".$_GET['email']."%'";
          
                 //En modo búsqueda lo mostraré todo en la misma página
-                $resultado = $usuarios->paginadoByName($records_by_page , $limit_from, $nombre);
+                $resultado = $usuarios->paginadoByEmail($records_by_page , $limit_from, $nombre);
 
                 $json = array('resultados' => $resultado);
 
