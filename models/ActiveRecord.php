@@ -58,6 +58,15 @@ class ActiveRecord {
         return $resultado;
     }
 
+    public static function paginadoByName($limit, $offset, $nombre){
+
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE nombre LIKE " . $nombre . " LIMIT ${limit} OFFSET ${offset} ";   
+       
+        $resultado = self::consultarSQL($query);
+
+        return $resultado;
+    }
+
 
     // Busca un registro por su id
     public static function find($id) {

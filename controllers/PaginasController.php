@@ -71,8 +71,9 @@ class PaginasController
 
                     } else {
 
-                        $resultado = $usuario->guardar();
                         $usuario->hashPassword();
+                        $resultado = $usuario->guardar();
+                        
 
                         if ($resultado) {
 
@@ -120,8 +121,9 @@ class PaginasController
                
                 if (empty($alertas)) { 
 
-                    $resultado = $usuario->guardar();
                     $usuario->hashPassword();
+                    $resultado = $usuario->guardar();
+                   
 
                     if ($resultado) {
 
@@ -160,6 +162,18 @@ class PaginasController
             }
         }
     }
+
+    public static function  borrarUsuario(){
+
+        $usuario = new Usuarios();
+        $usuario->id = $_GET['id'];
+        $usuario->eliminar(); 
+        
+    }
+
+
+
+
 
     public static function agenda(Router $router)
     {

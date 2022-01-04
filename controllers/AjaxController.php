@@ -47,19 +47,39 @@ class AjaxController
             $response['total_records'] = count($info);
 
             // Obtenemos los registros para la "pagina actual"
-            $resultado = $usuarios->paginado($records_by_page , $limit_from);
+            if($_GET['nombre'] != ''){
 
-            $json = array('resultados' => $resultado);
+                $nombre = "' %".$_GET['nombre']."%'";
+         
+                //En modo búsqueda lo mostraré todo en la misma página
+                $resultado = $usuarios->paginadoByName($records_by_page , $limit_from, $nombre);
 
-    
-            $response['records'] = $json;
-            
+                $json = array('resultados' => $resultado);
 
-            // Imprimimos la respuesta
-            header('Content-Type: application/json');
-            echo json_encode($response);
+        
+                $response['records'] = $json;
+                
 
+                // Imprimimos la respuesta
+                header('Content-Type: application/json');
+                echo json_encode($response);
+
+
+            } else {
+                
+                $resultado = $usuarios->paginado($records_by_page , $limit_from);
+
+                $json = array('resultados' => $resultado);
+
+        
+                $response['records'] = $json;
+                
+
+                // Imprimimos la respuesta
+                header('Content-Type: application/json');
+                echo json_encode($response);
             }
+        }
     }
 
     /*

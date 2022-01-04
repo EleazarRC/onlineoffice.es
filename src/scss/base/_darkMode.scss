@@ -39,7 +39,6 @@
   }
 
 .dark-mode {
-
     table {
         background-color: v.$grisOscuro;
       }
@@ -52,11 +51,12 @@
     }
     #paginacion-agenda div img {
 
-        filter: invert(100%);
-
-        
+        filter: invert(100%);   
     }
 
+    #swal2-title{
+        color: v.$negro;
+    }
     .administracion #no-more-tables tr{
         border: 2px solid #fff;
     }

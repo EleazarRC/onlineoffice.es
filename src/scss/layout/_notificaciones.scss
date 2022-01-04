@@ -1,0 +1,16 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+
+.dark-mode > div.swal2-container.swal2-center.swal2-backdrop-show > div{
+        border: 2px solid v.$blanco;
+        background-color: v.$grisOscuro;
+        #swal2-title, #swal2-html-container {
+            color: v.$blanco;
+            font-size: 150%;
+        }
+        
+        
+}

@@ -19,12 +19,17 @@ $router->get('/panelprincipal', [PaginasController::class, 'panelprincipal']);
 
 // Administración
 $router->get('/admin', [PaginasController::class, 'administracion']);
+
 // Creación de usuarios
 $router->get('/admin/crearNuevoUsuario', [PaginasController::class, 'crearNuevoUsuario']);
 $router->post('/admin/crearNuevoUsuario', [PaginasController::class, 'crearNuevoUsuario']);
+
 // Actualización de usuarios
 $router->get('/admin/actualizarUsuario', [PaginasController::class, 'actualizarUsuario']);
 $router->post('/admin/actualizarUsuario', [PaginasController::class, 'actualizarUsuario']);
+
+// Borrar usuarios
+$router->get('/admin/borrarUsuario', [PaginasController::class, 'borrarUsuario']);
 
 
 
