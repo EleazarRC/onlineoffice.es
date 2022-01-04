@@ -1,0 +1,108 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.video {
+  position: relative;
+  //max-height: 70rem;
+  //min-height: 50rem;
+  overflow: hidden;
+
+  .overlay {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      270deg,
+      rgba(128, 128, 128, 0.5) 0%,
+      rgba(144, 144, 144, 0.3) 100%
+    );
+    z-index: 1;
+  }
+
+  video {
+    width: auto;
+    display: block;
+
+    @include m.desktop {
+      width: 100%;
+    }
+  }
+}
+
+.menu-login {
+  width: 280px;
+  padding:30px;
+
+  margin: 10% auto;
+
+  border: 3px solid v.$negro;
+  border-radius: 2rem;
+
+  box-shadow: 1px 1px 5px v.$negro;
+
+  input[type="email"],
+  input[type="password"] {
+    border: 2px solid v.$negro;
+    background-color: rgba(100, 100, 100, 0.3);
+    text-align: center;
+
+  }
+
+  h2 {
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    //color: v.$blanco;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+  }
+  label {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  @include m.telefono {
+    p {
+        font-size: 1.4rem;
+    }
+    label {
+        font-size: 1.3rem;
+      }
+    
+  }
+  @include m.tablet {
+    p {
+        font-size: 1.6rem;
+    }
+    input[type="submit"] {
+        font-size: 2rem;
+    }
+    label {
+        font-size: 1.4rem;
+      }
+    width: 480px;
+  }
+  @include m.desktop {
+    width: 780px;
+    padding-top: 0;
+
+    input[type="submit"] {
+        font-size: 2.5rem;
+    }
+    label {
+        font-size: 1.5rem;
+    }
+    h2{
+      margin: 10px auto 10px auto;
+    }
+
+  }
+}

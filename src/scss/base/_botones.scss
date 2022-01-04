@@ -1,0 +1,60 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.boton-amarillo {
+    @include m.boton(v.$amarillo, inline-block);
+}
+
+.boton-amarillo-block {
+    @include m.boton(v.$amarillo, block);
+}
+
+.boton-verde {
+    @include m.boton(v.$verde, inline-block);
+}
+.boton-rojo {
+    @include m.boton(v.$rojoClaro, inline-block);
+}
+
+.boton-rojo-block {
+   @include m.boton(v.$rojo, block);
+   width: 100%;
+}
+.boton-verde-block {
+    @include m.boton(v.$verde, block);
+}
+
+.boton-login {
+
+    @include m.boton(v.$negro, block);
+    border-radius: 3rem;
+    
+}
+
+.boton-login:hover{
+
+    @include m.boton(v.$blanco, block);
+    color: v.$negro;
+    box-shadow: 1px 1px 3px v.$negro;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: v.$separacion;
+    margin-bottom: v.$separacion;
+    
+    .btn{
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        width: 150px;
+        @include m.tablet {
+            width: 200px;
+        }
+        @include m.desktop {
+            width: 250px;
+        }
+    }
+}

@@ -1,0 +1,183 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.administracion {
+  height: auto;
+
+  h2{
+    margin-top: v.$separacion;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: v.$separacion;
+  }
+  .herramientas-Usuarios{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    .input-group{
+      width: 60%;
+      //border: 2px solid v.$negro;
+
+      input{
+        font-size:1.6rem;
+      }
+    }
+
+    @include m.tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .input-group{
+        width: 33%;
+      }
+    }
+    div{
+      margin-bottom: calc(v.$separacion / 4);
+
+      .input-group{
+        width: 90%;
+      }
+    }
+  }
+ 
+
+  #no-more-tables {
+    margin-bottom: v.$separacion;
+  }
+
+  // https://elvery.net/demo/responsive-tables/#flip-scroll
+  @media only screen and (max-width: 768px) {
+    /* Force table to not be like tables anymore */
+    #no-more-tables table,
+    #no-more-tables thead,
+    #no-more-tables tbody,
+    #no-more-tables th,
+    #no-more-tables td,
+    #no-more-tables tr {
+      display: block;
+    }
+   
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #no-more-tables thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    #no-more-tables tr {
+      border: 1px solid v.$negro;
+      border-spacing: 0px 20px;
+      vertical-align: middle;
+    }
+
+    #no-more-tables td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid rgb(161, 161, 161);
+      position: relative;
+      padding-left: 40%;
+      @include m.telefono {
+        padding-left: 50%;
+      }
+      white-space: normal;
+      text-align: left;
+    }
+
+    #no-more-tables td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    /*
+            Label the data
+            */
+    #no-more-tables td:before {
+      content: attr(data-title);
+    }
+  }
+
+  
+
+  #paginacion-agenda {
+    
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      border-radius: .5rem;
+
+      width: 5rem;
+      height: 5rem;
+      border: 2px solid v.$negro;
+
+      //background-color: v.$gris;
+      cursor: pointer;
+
+      box-shadow: 2px 2px 10px rgb(27, 27, 27);
+        
+      img {
+        width: 3rem;
+     
+      }
+      a.disabled {
+        pointer-events: none;
+        cursor: default;
+      }
+      
+    }
+    :hover{
+      box-shadow: none;
+      img {
+        width: 4rem;
+      }
+    }
+    .disabled{
+      //display: none;
+      background-color: v.$blanco;
+      box-shadow: none;
+      cursor: default;
+        img {
+          width: 3rem;
+        }
+      :hover{
+        img {
+          width: 3rem;
+        }
+      }
+    }
+  } 
+    
+}
+.dark-mode {
+  #paginacion-agenda {
+    div {
+      border: 2px solid v.$blanco;
+      background-color: v.$negro;
+      box-shadow: 2px 2px 10px rgb(98, 98, 98);
+    }
+    .disabled{
+      background-color: v.$grisOscuro;
+      cursor: default;
+    }
+
+}
+}
+

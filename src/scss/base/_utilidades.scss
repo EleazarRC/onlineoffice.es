@@ -1,0 +1,57 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+.seccion {
+    margin-top: calc(v.$separacion / 2);
+    margin-bottom: calc(v.$separacion / 2);
+}
+.contenido-centrado {
+    max-width: 80rem;
+}
+
+.alinear-derecha {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.ocultar {
+    display:none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta {
+    font-size: 1rem;
+    @include m.tablet {
+        font-size: 1.2rem;
+    }
+    @include m.desktop {
+        font-size: 1.4rem;
+    }
+    padding: .5rem;
+    text-align: center;
+    color: v.$blanco;
+    font-weight: v.$bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+    &.error {
+        background-color: v.$rojo;
+    }
+
+    &.exito {
+        background-color: v.$verde;
+    }
+}
+
+.espaciado {
+    margin-top: calc(v.$separacion / 2 );
+    margin-bottom: calc(v.$separacion / 2 );
+}

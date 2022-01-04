@@ -1,0 +1,161 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+
+.izquierda{
+
+    display: flex;
+    justify-content: flex-end;
+     @include m.desktop {
+            margin-top: 20px;
+     }
+
+}
+
+.dark-mode-boton {
+    width: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    //filter: invert(100%);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+      //margin-left: 50%;
+      width: .5rem;
+    }
+  
+    to {
+      //margin-left: 0%;
+      width: 3rem;
+    }
+  }
+
+.dark-mode {
+
+    table {
+        background-color: v.$grisOscuro;
+      }
+    td{
+        color: v.$blanco;
+    }
+    #buscador{
+        background-color: v.$grisOscuro;
+        
+    }
+    #paginacion-agenda div img {
+
+        filter: invert(100%);
+
+        
+    }
+
+    .administracion #no-more-tables tr{
+        border: 2px solid #fff;
+    }
+    th {
+        color: v.$blanco;
+    }
+    td{
+        border-bottom: v.$blanco;
+    }
+    header{
+        background-color: v.$grisOscuro;
+        border-bottom: 2px solid v.$blanco;   
+    }
+    .dark-mode-boton {
+        filter: invert(100%);
+    }
+    .menu{
+        filter: invert(100%);
+    }
+    #up{
+        filter: invert(100%); 
+    }
+    .informacion {
+        a{
+            color: v.$blanco;
+        }
+        span{
+            color: v.$amarillo;
+            font-weight: 900;
+        }
+    }
+   
+    background-color: darken(v.$grisOscuro, 10);
+
+    p {
+        color: v.$blanco;
+    }
+
+    a, h1,h2,h3,h4  {
+        color: v.$blanco;
+    }
+
+    footer {
+
+        background-color: v.$grisOscuro;
+        border-top: 2px solid v.$blanco;
+        
+        p{
+            color: v.$blanco;
+        }
+        
+    }
+
+    .menu-login{
+        border-color: v.$blanco;
+
+        h2 {
+            color: v.$blanco;
+        }
+    }
+       
+    .formulario {
+        label,
+        legend,
+        p {
+            color: v.$blanco;
+        }
+
+        input:not([type="submit"]), 
+        textarea,
+        select {
+            background-color: v.$grisOscuro;
+            border: 2px solid v.$blanco;
+            color: v.$blanco;
+        }
+
+  }
+    .video {
+        .overlay {
+            background: rgb(53, 53, 53);
+            background: linear-gradient(
+            270deg,
+            rgba(39, 39, 39, 0.75) 0%,
+            rgba(0, 0, 0, 0.5) 100%
+            );
+        }
+    }
+
+    .boton-login {
+
+        @include m.boton(v.$blanco, block);
+        border-radius: 3rem;
+        color: v.$negro;
+        
+    }
+    .boton-login:hover{
+
+        @include m.boton(v.$negro, block);
+        color: v.$blanco;
+        box-shadow: 1px 1px 3px v.$negro;
+    }
+}

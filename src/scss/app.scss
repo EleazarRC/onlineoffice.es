@@ -1,0 +1,149 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+@use "base";
+@use "internas";
+@use "layout";
+
+#up {
+  width: 3rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  cursor: pointer;
+
+  display: none;
+
+  z-index: 10;
+
+  @include m.tablet {
+    width: 4rem;
+  }
+  @include m.desktop {
+    width: 5rem;
+  }
+
+}
+#up:hover {
+  box-shadow: 2px 2px 10px #666;
+  border-radius: 10rem;
+  padding: 1.5px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  .modal-content {
+    //TODO: Si tuviera muchos objetos en el
+    //menú permitir el scroll a cambio de perder
+    // un poco de diseño
+    position: fixed;
+    width: 66%;
+    height: 66%;
+    position: absolute;
+
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    // Compatibilidad con safari....
+    // Si no se va el menú a un lugar desconocido :D
+    transform: translate(0%, 0%);
+
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: v.$blanco;
+    border: 2px solid v.$negro;
+    border-radius: 2.5rem;
+
+    nav {
+      margin-top: 50px;
+      padding-bottom: 0px;
+    }
+
+    ul,
+    li {
+      @include m.resetear-lista;
+      
+      margin: 20px;
+
+      a {
+        display: block;
+        text-align: center;
+        color: v.$negro;
+        border: 2px solid v.$negro;
+        background-color: v.$blanco;
+        box-shadow: 2px 2px 10px #666;
+        border-radius: 2.5rem;
+        padding: 1rem;
+        text-transform: uppercase;
+      }
+      :hover {
+        font-weight: 900;
+        box-shadow: none;
+      }
+    }
+
+    div {
+      margin: 0 auto;
+    }
+  }
+}
+
+.btnSalir {
+  width: 50px;
+  height: 50px;
+  //border-radius: 100rem;
+  //border: 1px solid v.$rojo;
+
+  cursor: pointer;
+
+  img {
+    margin-top: 20px;
+  }
+
+  :hover {
+      border-radius: 100rem;
+    box-shadow: 2px 2px 10px #666;
+  }
+}
+
+.dark-mode {
+    .modal{
+        background-color: rgb(22, 22, 22); /* Fallback color */
+        background-color: rgba(20, 20, 20, 0.4); /* Black w/ opacity */
+    }
+    .modal-content{
+        background-color: v.$negro;
+        border: 2px solid v.$blanco;
+        ul,
+        li {
+        a {
+            color: v.$blanco;
+            border: 2px solid v.$blanco;
+            background-color: v.$negro;
+            box-shadow: 2px 2px 10px #666;
+        }
+    }
+    }
+    .btnSalir{
+        filter: invert(100%);
+    }
+}

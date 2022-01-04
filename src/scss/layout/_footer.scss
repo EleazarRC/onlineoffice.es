@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+footer {
+    background-color: v.$blanco;
+    border-top: 2px solid v.$negro;
+    box-shadow: 2px 2px 10px #666;
+    margin-top: 0;
+    p{
+        padding-top: calc(v.$separacion / 2 );
+        margin: 0;
+        color: v.$negro;
+    }
+
+    min-height: 100px;
+    height: auto;
+}
+

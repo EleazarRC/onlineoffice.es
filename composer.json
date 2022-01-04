@@ -1,0 +1,18 @@
+{
+    "name": "eleazarrc/office",
+    "description": "App Web con utilidades para trabajadores de oficina",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "controllers",
+            "Model\\" : "models"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eleazar Ramos Cortés",
+            "email": "sixen25@gmail.com"
+        }
+    ],
+    "require": {}
+}

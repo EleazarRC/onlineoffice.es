@@ -1,0 +1,104 @@
+/* NORMALICE
+.no-webp .inicio {
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio {
+    background-image: url(../img/header.webp);
+}
+*/
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+header{   
+    background-color: v.$blanco;
+    border-bottom: 2px solid v.$negro;
+
+    @include m.tablet {
+        padding: 2.5rem .5rem 2.5rem .5rem;
+    }
+
+    .menu {     
+        width: 4rem; 
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 10px #666;
+
+    @include m.tablet {
+        flex-direction: row;
+    }
+}
+
+h1 {
+    margin:10px 0 0 0;
+    font-weight:900;
+    color: v.$negro;
+    text-align: center; 
+    @include m.tablet {
+        margin: 0 0 0 calc(v.$separacion / 2);
+        font-size: 4rem;
+       
+    }
+
+}
+
+.informacion {
+    //margin:0 calc(v.$separacion/2) 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;  //PONERLO EN END AL PULSAR MENÚ
+
+    p{
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+    }
+
+    a{
+        margin-bottom: 15px;
+        text-decoration: none;
+        //color: v.$negro;
+        font-size: 1.4rem;
+        color: v.$rojo;
+        font-weight: 900;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+
+    .menu:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 10px #666;
+        border-radius: 1rem;
+        padding: 1.5px;
+    }
+    img{
+        margin-bottom: 15px;
+    }
+
+    span{
+        //color: v.$amarillo;
+        font-size: 1.6rem;
+        font-weight: 900;    
+        letter-spacing: .2rem;
+        text-transform: capitalize;
+    }
+
+    @include m.tablet {
+        flex-direction: row;
+        align-items: center;
+
+        p, a, img{
+            margin-bottom: 0;
+            margin-right: calc(v.$separacion / 2);
+        }
+       
+    }
+}
+
+#logo {
+    cursor: pointer;
+}
