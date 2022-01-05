@@ -28,9 +28,12 @@ function crearTabla(respuesta, email) {
 
   for (let i = 0; i < records.resultados.length; i++) {
     const nuevoTr = document.createElement("tr");
+    
 
     const id = document.createElement("td");
     id.setAttribute("data-title", "#");
+
+    id.innerHTML
 
     const nombre = document.createElement("td");
     nombre.setAttribute("data-title", "Nombre");
