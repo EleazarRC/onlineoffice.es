@@ -1,12 +1,11 @@
 {
-    "name": "eleazarrc/office",
-    "description": "App Web con utilidades para trabajadores de oficina",
+    "name": "eleazarrc/www",
     "autoload": {
         "psr-4": {
-            "MVC\\" : "./",
-            "Controllers\\" : "controllers",
-            "Model\\" : "models"
-        }
+             "MVC\\" : "./",
+             "Model\\" : "./models",
+             "Controllers\\" : "./controllers"
+             }
     },
     "authors": [
         {

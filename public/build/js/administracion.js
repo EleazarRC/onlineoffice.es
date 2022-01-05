@@ -226,45 +226,56 @@ function escucharBotonesBorrar() {
 
     btn.addEventListener("click", function () {
       //console.log(this.value)
-
-      Swal.fire({
-        title:
-          "¿Estás seguro de querer eliminar al usuario con  la  id " +
-          this.value +
-          "?",
-        text: "¡Este cambio no se puede revertir!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "¡Sí, eliminarlo!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          try {
-            const url = "/index.php/admin/borrarUsuario?id="+this.value+"";
-            //console.log(url);
-            fetch(url, { method: "GET"});
-  
-          } catch (e) {
-            console.log(e);
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: '¡No se ha podido borrar el usuario, contacte con el administrador!',
-              //footer: '<a href="">Why do I have this issue?</a>'
-            })
+      if(this.value != 1){
+        
+        Swal.fire({
+          title:
+            "¿Estás seguro de querer eliminar al usuario con  la  id " +
+            this.value +
+            "?",
+          text: "¡Este cambio no se puede revertir!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "¡Sí, eliminarlo!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            try {
+              const url = "/index.php/admin/borrarUsuario?id="+this.value+"";
+              //console.log(url);
+              fetch(url, { method: "GET"});
+    
+            } catch (e) {
+              console.log(e);
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '¡No se ha podido borrar el usuario, contacte con el administrador!',
+                //footer: '<a href="">Why do I have this issue?</a>'
+              })
+            }
+            Swal.fire(
+              "¡Borrado!",
+              " El usuario ha sido borrado correctamente",
+              "success"
+            );
+            //setTimeout(() => {
+            mostrarPaginaUsuarios(1);
+            //document.location.reload(true)
+           // },2000)  
           }
-          Swal.fire(
-            "¡Borrado!",
-            " El usuario ha sido borrado correctamente",
-            "success"
-          );
-          //setTimeout(() => {
-          mostrarPaginaUsuarios(1);
-          //document.location.reload(true)
-         // },2000)  
-        }
-      })
+        })
+
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '¡Hacen falta SUPERPODERES para borrar al administrador ;)!',
+          //footer: '<a href="">Why do I have this issue?</a>'
+        })
+      }
+     
     });
   }
 }

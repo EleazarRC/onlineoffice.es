@@ -22,7 +22,6 @@ class Router
         $currentUrl = $Path_Info ?? '/index.php';
         $method = $_SERVER['REQUEST_METHOD'];
 
-
  
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;
