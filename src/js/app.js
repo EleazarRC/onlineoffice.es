@@ -110,6 +110,8 @@ function getCookie(name) {
 }
 
 function setCookie(name, value, daysToLive) {
+
+  deleteCookie("dark-mode");
   // Encode value in order to escape semicolons, commas, and whitespace
   var cookie = name + "=" + encodeURIComponent(value);
 
