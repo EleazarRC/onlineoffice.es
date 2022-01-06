@@ -40,8 +40,6 @@
             </div>
         </div>
 
-
-
         </div>
         <video autoplay muted loop>
             <source src="./build/video/video.mp4" type="video/mp4">
