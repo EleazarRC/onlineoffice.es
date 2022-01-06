@@ -102,7 +102,7 @@
 
     footer {
 
-        background-color: v.$grisOscuro;
+        background-color: #1A1A1A;
         border-top: 2px solid v.$blanco;
         
         p{
@@ -129,7 +129,7 @@
         input:not([type="submit"]), 
         textarea,
         select {
-            background-color: v.$grisOscuro;
+            background-color: v.$negroClaro;
             border: 2px solid v.$blanco;
             color: v.$blanco;
         }
