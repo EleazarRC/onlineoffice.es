@@ -47,12 +47,16 @@ class PaginasController
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                $usuario = new Usuarios($_POST['usuario']);
-                $usuario->sincronizar($_POST['usuario']);
 
-                $alertas = $usuario->validarNuevaCuenta();
+                $usuario = new Usuarios($_POST['usuario']);
+                $usuario->administrador = intval($_POST['taskOption']);
+
+                $usuario->sincronizar($usuario); 
+
+                $alertas = $usuario->validarNuevaCuenta();  
 
                 $alertas = $usuario->getAlertas();
+
 
                 if (empty($alertas)) {
 
@@ -72,9 +76,10 @@ class PaginasController
                     } else {
 
                         $usuario->hashPassword();
+
+   
                         $resultado = $usuario->guardar();
                         
-
                         if ($resultado) {
 
                             $alertas['exito'][] = 'Usuario guardado correctamente';
@@ -113,6 +118,7 @@ class PaginasController
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $usuario = new Usuarios($_POST['usuario']);
+                $usuario->administrador = intval($_POST['taskOption']);
                 $usuario->sincronizar($_POST['usuario']);
 
                 $alertas = $usuario->validarNuevaCuenta();

@@ -7,7 +7,16 @@ class Usuarios extends ActiveRecord
 
     // Base DE DATOS
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'password', 'puntos'];
+    protected static $columnasDB = 
+    [
+     'id',
+     'nombre',
+     'apellido',
+     'email',
+     'password',
+     'puntos',
+     'administrador'
+    ];
 
     public $id;
     public $nombre;
@@ -15,6 +24,7 @@ class Usuarios extends ActiveRecord
     public $email;
     public $password;
     public $puntos;
+    public $administrador;
 
     public function __construct($args = [])
     {
@@ -24,6 +34,7 @@ class Usuarios extends ActiveRecord
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->puntos = $args['puntos'] ?? '';
+        $this->administrador = $args['administrador'] ?? 0;
     }
 
     public function validar()
@@ -109,8 +120,20 @@ class Usuarios extends ActiveRecord
         }
     }
 
+    public function esAdministrador($id){
+        
+        $query = "SELECT administrador FROM " . self::$tabla . " WHERE id = " .$id;
+
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+
+    }
+
+
+
     public function autenticar()
     {
+
         // El usuario esta autenticado
         session_start();
 
@@ -120,6 +143,8 @@ class Usuarios extends ActiveRecord
         $_SESSION['id'] = $resultado[0]->id;
         $_SESSION['usuario'] = $this->email;
         $_SESSION['login'] = true;
+        $_SESSION['administrador'] = $this->administrador;
+
 
         //TODO: CAMBIAR PARA EL SERVIDOR....
         header('Location: /index.php/panelprincipal');

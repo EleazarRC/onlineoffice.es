@@ -1,8 +1,4 @@
-
-
-
 <form class="formulario" action="<?php echo $action ?>" method="POST" enctype="multipart/form">
-
 <?php 
     if($editar == true){
         echo '<input hidden ';
@@ -14,7 +10,6 @@
     }
 
 ?>
-   
     <label for="nombre"> Nombre: </label>
         <input 
             id="nombre"
@@ -54,6 +49,20 @@
         max='999999999'
         value="<?php echo $usuario->puntos ?? ''; ?>"
     >
+    
+    <label for="administrador">¿Quieres activar el modo administrador?</label>
+    <select id="administrador" name="taskOption">
+            <?php 
+                if(isset($usuario->administrador) && $usuario->administrador == 1){
+                    echo '<option active selected value="1">Activar</option>';
+                    echo '<option value="0">Desactivar</option>';
+                } else {
+                    echo '<option value="1">Activar</option>';
+                    echo '<option active selected value="0">Desactivar</option>';
+                }   
+            ?>
+    </select>
+
 
     <div class="botones">
         <a class="btn btn-lg mt-0 boton-rojo" href="/index.php/admin"> Salir </a>

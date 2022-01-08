@@ -1,5 +1,8 @@
 <?php
 include_once __DIR__ . '/../templates/alertas.php';
+
+
+
 ?>
 
 <div class="container contenedor administracion">
@@ -9,6 +12,7 @@ include_once __DIR__ . '/../templates/alertas.php';
     <h3>Usuarios:</h3>
 
     <div class="herramientas-Usuarios mb-3 ms-2 me-2">
+     
         <div>
             <a class="btn btn-lg mt-0 boton-verde" href="/index.php/admin/crearNuevoUsuario">Añadir Nuevo Usuario</a>
         </div>

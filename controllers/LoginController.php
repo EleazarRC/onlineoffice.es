@@ -14,6 +14,7 @@ class LoginController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $auth = new Usuarios($_POST);
+
             $alertas = $auth->validar();
 
             // Si no hay alertas autentificamos
@@ -29,6 +30,13 @@ class LoginController {
                     $auth->comprobarPassword($resultado);
 
                     if($auth->autenticado) {
+
+                        $id = $auth->obtenerIdByEmail();
+
+                        // ¿Es administrador?
+                        $esAdministrador = $auth->esAdministrador($id[0]->id);
+                        $auth->administrador = $esAdministrador[0]->administrador;
+
                        $auth->autenticar();
                     } else {
                         $alertas = Usuarios::getalertas();
