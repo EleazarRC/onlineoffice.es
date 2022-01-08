@@ -18,7 +18,6 @@ async function mostrarPaginaUsuarios(page, email='') {
     console.log(e);
   }
 }
-
 function crearTabla(respuesta, email) {
   const { current_page, records, records_by_page, total_records } = respuesta;
 
