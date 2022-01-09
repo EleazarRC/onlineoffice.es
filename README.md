@@ -13,7 +13,7 @@ Podéis acceder a la versión online: https://onlineoffice.es/
 Por medio de github y la comunidad ampliar y corregir el proyecto. Se pueden aportar más utilidades, añadir algún pequeño juego, corregir algún bug o aportar mejoras de cualquier tipo. 
 Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, asignarla, crearse una rama para corregirla, solicitar un pull requests, discutirlo y añadirlo a la rama principal para subirlo en el servidor.
 ## ¿Qué está hecho en este momento? 🧭
-- El login de usuarios. (Si necesitáis uno para acceder online enviarme un msn) Para colaborar, tenéis uno disponible cuando os descarguéis la base de datos. Ya que las contraseñas estás cifradas.
+- El login de usuarios. (Si necesitáis uno para acceder online enviarme un msn) Para colaborar, tenéis uno disponible cuando os descarguéis la base de datos. Ya que las contraseñas están cifradas.
 - La administración de usuarios (verlos, crearlos, editarlos, borrarlos) en el menú administración.
 - También están los usuarios administradores y no administradores. Por seguridad, al menos de momento, online solo tendré administrador yo. Para que nadie entre y borre todos los usuarios. Ya veremos, si habrá que hacer otros tipos de administrador.
 - El modo oscuro, el cual usa cookies para guardar tus preferencias y está pensado para estos usuarios que pasan tantas horas enfrente del ordenador.
@@ -53,7 +53,7 @@ composer update
 En el proyecto también uso GULP con herramientas que utilizo yo. No es necesario instalar nada, pero si quieres usarlas tienes que instalar GULP https://gulpjs.com/ e instalar sus dependencias con node https://nodejs.org/en/ 
 ### Instalación 🔧
 Tienes que tener instalado un servidor local, como https://laragon.org/  o https://www.apachefriends.org/es/index.html e iniciarlo en la carpeta **public**. 
-Además, importa la base de datos y en el archivo includes/config/database.php tienes que poner los datos de acceso a la base de datos.
+Además, importar la base de datos y en el archivo includes/config/database.php tienes que poner los datos de acceso a la base de datos.
 ## Despliegue 📦
 Una vez hecho el pullrequest lo subiré al servidor.
 ## Construido con 🛠️
