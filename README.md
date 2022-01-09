@@ -49,8 +49,8 @@ Además, importa la base de datos y en el archivo includes/config/database.php t
 Una vez hecho el pullrequest lo subiré al servidor.
 ## Construido con 🛠️
 * [Composer](https://getcomposer.org/) - MVC de PHP
-* [GULP](https://gulpjs.com/) - Herramientas de ayuda
-* [NODE](hhttps://nodejs.org/es/) - Solo para dependencias de gulp (De momento)
+* [GULP](https://gulpjs.com/) - Herramientas de ayuda **no requerido**
+* [NODE](hhttps://nodejs.org/es/) - Solo para dependencias de gulp **no requerido**
 ## Contribuyendo 🖇️
 Por favor lee el [CONTRIBUTING.md](https://gist.github.com/eleazarRC/CONTRIBUTING) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 ## Wiki 📖
