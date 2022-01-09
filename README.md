@@ -25,12 +25,15 @@ Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, as
 - CSS
 - SCSS 
 - JavaScript
+- JQuery
+- Bootstrap
 - PHP
 - Git y GitHub
 - Base de datos MySQL
 - NPM (Instalarlo, actualizarlo e instalar dependencias)
 - Composer (Instalarlo, actualizarlo e instalar dependencias)
 - También recomiendo GULP
+- Se pueden utilizar otros lenguajes de programación y herramientas. Siempre que esté bien documentado.
 ## Comenzando 🚀
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas_
 ```
