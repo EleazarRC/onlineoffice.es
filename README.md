@@ -53,10 +53,10 @@ Una vez hecho el pullrequest lo subiré al servidor.
 * [GULP](https://gulpjs.com/) - Herramientas de ayuda **no requerido**
 * [NODE](hhttps://nodejs.org/) - Solo para dependencias de gulp **no requerido**
 ## Contribuyendo 🖇️
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/eleazarRC/CONTRIBUTING) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+Por favor lee el [CONTRIBUTING.md](https://github.com/EleazarRC/onlineoffice.es/blob/main/CONTRIBUTING.md) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 ## Wiki 📖
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/EleazarRC/onlineoffice.es/wiki) Si no está lo que buscas ayudanos colaborando.
-## Foro
+## Foro 👩🏿‍🤝‍👩🏼👨🏽‍🤝‍👨🏼
 Para dudas, consultas aportaciones puedes visitar el [Foro](https://github.com/EleazarRC/onlineoffice.es/discussions)
 ## Versionado 📌
 Mira los [tags en este repositorio](https://github.com/EleazarRC/onlineoffice.es/tags).
