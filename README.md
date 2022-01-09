@@ -55,13 +55,13 @@ En el proyecto también uso GULP con herramientas que utilizo yo. No es necesari
 Tienes que tener instalado un servidor local, como https://laragon.org/  o https://www.apachefriends.org/es/index.html e iniciarlo en la carpeta **public**. 
 Además, importar la base de datos y en el archivo includes/config/database.php tienes que poner los datos de acceso a la base de datos.
 ## Despliegue 📦
-Una vez hecho el pullrequest lo subiré al servidor.
+Una vez hecho el  pull requests lo subiré al servidor.
 ## Construido con 🛠️
 * [Composer](https://getcomposer.org/) - MVC de PHP
 * [GULP](https://gulpjs.com/) - Herramientas de ayuda **no requerido**
 * [NODE](hhttps://nodejs.org/) - Solo para dependencias de gulp **no requerido**
 ## Contribuyendo 🖇️
-Por favor lee el [CONTRIBUTING.md](https://github.com/EleazarRC/onlineoffice.es/blob/main/CONTRIBUTING.md) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+Por favor lee el [CONTRIBUTING.md](https://github.com/EleazarRC/onlineoffice.es/blob/main/CONTRIBUTING.md) para detalles de nuestro código de conducta, y el proceso para enviar un pull requests.
 ## Wiki 📖
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/EleazarRC/onlineoffice.es/wiki) Si no está lo que buscas ayudanos colaborando.
 ## Foro 👩🏿‍🤝‍👩🏼👨🏽‍🤝‍👨🏼
