@@ -22,19 +22,20 @@ Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, as
 - Composer (Instalarlo, actualizarlo e instalar dependencias)
 - También recomiendo GULP
 ## Comenzando 🚀
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas_
 ```
 git clone https://github.com/EleazarRC/onlineoffice.es.git
 ```
 ### DESCARGA DE LA BASE DE DATOS v1.0.1 🍳
 Nombre de la base de datos: dbs5134450
-Usuario:                    colaborador@colaborador.com
-Contraseña:                 colaborador 
-base de datos:              https://gist.github.com/EleazarRC/b415439face9550f860bc7aee47f3dcb
-> Estos datos de usuario no sirven para onlineoffice.es, tendrás que crear una cuenta cuando esté
+- Usuario:                    colaborador@colaborador.com
+- Contraseña:                 colaborador 
+- base de datos:              https://gist.github.com/EleazarRC/b415439face9550f860bc7aee47f3dcb
+> Estos datos de usuario no sirven para https://onlineoffice.es/, tendrás que crear una cuenta cuando esté
 disponible (pronto) o pídeme una si necesitas revisar algo.
 ### Pre-requisitos 📋
 _Que cosas necesitas para instalar el proyecto y como instalarlas_
+
 El único requisito indispensable es composer para que funcione el MVC en PHP por lo que instalarlo.
 https://getcomposer.org/
 Una vez instalado
@@ -50,13 +51,13 @@ Una vez hecho el pullrequest lo subiré al servidor.
 ## Construido con 🛠️
 * [Composer](https://getcomposer.org/) - MVC de PHP
 * [GULP](https://gulpjs.com/) - Herramientas de ayuda **no requerido**
-* [NODE](hhttps://nodejs.org/es/) - Solo para dependencias de gulp **no requerido**
+* [NODE](hhttps://nodejs.org/) - Solo para dependencias de gulp **no requerido**
 ## Contribuyendo 🖇️
 Por favor lee el [CONTRIBUTING.md](https://gist.github.com/eleazarRC/CONTRIBUTING) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 ## Wiki 📖
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/EleazarRC/onlineoffice.es/wiki) Si no está lo que buscas ayudanos colaborando.
 ## Foro
-Para dudas, consultas aportaciones puedes visitar el [foro](https://github.com/EleazarRC/onlineoffice.es/discussions)
+Para dudas, consultas aportaciones puedes visitar el [Foro](https://github.com/EleazarRC/onlineoffice.es/discussions)
 ## Versionado 📌
 Mira los [tags en este repositorio](https://github.com/EleazarRC/onlineoffice.es/tags).
 ## Autores ✒️
