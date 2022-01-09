@@ -68,7 +68,7 @@ Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) 
 ## Expresiones de Gratitud 🎁
 * Comenta a otros sobre este proyecto 📢
 ---
-⌨️ con ❤️ por [EleazarRC](https://github.com/EleazarRCd) 😊
+⌨️ con ❤️ por [EleazarRC](https://github.com/EleazarRC) 😊
 
 
 
