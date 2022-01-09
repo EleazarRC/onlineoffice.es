@@ -67,6 +67,8 @@ Una vez hecho el  pull requests lo subiré al servidor.
 * [NODE](hhttps://nodejs.org/) - Solo para dependencias de gulp **no requerido**
 ## Contribuyendo 🖇️
 Por favor lee el [CONTRIBUTING.md](https://github.com/EleazarRC/onlineoffice.es/blob/main/CONTRIBUTING.md) para detalles de nuestro código de conducta, y el proceso para enviar un pull requests.
+## Código de conducta
+Ante todo respeto y ganas de aprender. También está disponible el código de conducta [CODE_OF_CONDUCT.md](https://github.com/EleazarRC/onlineoffice.es/blob/main/CODE_OF_CONDUCT.md) para más detalles.
 ## Wiki 📖
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/EleazarRC/onlineoffice.es/wiki) Si no está lo que buscas ayudanos colaborando.
 ## Foro 👩🏿‍🤝‍👩🏼👨🏽‍🤝‍👨🏼
