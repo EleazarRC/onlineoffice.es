@@ -1,6 +1,3 @@
-# CÓDIGO DE CONDUCTA
-Respeto y ganas de aprender.
-
 # FORMAS DE CONTRIBUIR
 Puedes proponer una corrección de un bug o la implementación de una mejora en los siguientes sitios.
 - Crea una nueva issue: https://github.com/EleazarRC/onlineoffice.es/issues
