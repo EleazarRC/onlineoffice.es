@@ -147,7 +147,7 @@ function crearPaginador(current_page, records_by_page, total_records) {
 
   const marcadorPagina = document.querySelector("#marcadorPagina");
   marcadorPagina.innerHTML = `
-    <p> Pagina ${current_page} de ${Math.ceil(totalPaginas)} </p>
+    <p> Página ${current_page} de ${Math.ceil(totalPaginas)} </p>
   `;
 
   if (document.querySelector("#paginacion-agenda")) {

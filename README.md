@@ -2,9 +2,11 @@
 Se trata de una aplicación destinada a los trabajadores de oficina, en la cual habrán diferentes herramientas para facilitarles el día a día. Como notas, listas de tareas etc... Además, me gustaría que se pudieran crear equipos de trabajo en los que se puedan compartir estas utilidades y utilizarlas en conjunto.
 Podéis acceder a la versión online: https://onlineoffice.es/
 #### Portada 
-![portada](img/portada.JPG)
+![portada](img/Portada.JPG)
 #### Administración
 ![Administrador](img/Administrador.JPG)
+#### Administración Tema Oscuro
+![Administrador](img/Administrador-Dark.JPG)
 #### Menú
 ![Menu](img/Menu.JPG)
 ## OBJETIVOS 🎈
