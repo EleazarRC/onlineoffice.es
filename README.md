@@ -1,5 +1,6 @@
 # ONLINEOFFICE.ES ❤️
 Se trata de una aplicación destinada a los trabajadores de oficina, en la cual habrán diferentes herramientas para facilitarles el día a día. Como notas, listas de tareas etc... Además, me gustaría que se pudieran crear equipos de trabajo en los que se puedan compartir estas utilidades y utilizarlas en conjunto.
+Podéis acceder a la versión online: https://onlineoffice.es/
 ## OBJETIVOS 🎈
 Por medio de github y la comunidad ampliar y corregir el proyecto. Se pueden aportar más utilidades, añadir algún pequeño juego, corregir algún bug o aportar mejoras de cualquier tipo. 
 Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, asignarla, crearse una rama para corregirla, solicitar un pull requests, discutirlo y añadirlo a la rama principal para subirlo en el servidor.
