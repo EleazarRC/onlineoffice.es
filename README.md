@@ -75,16 +75,4 @@ Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) 
 ---
 ⌨️ con ❤️ por [EleazarRC](https://github.com/EleazarRC) 😊
 
-## Galería
-#### Portada 
-![portada](img/portada.JPG)
-#### Administración
-![Administrador](img/Administrador.JPG)
-#### Administración Tema Oscuro
-![Administrador](img/Administrador-Dark.JPG)
-#### Menú
-![Menu](img/Menu.JPG)
-#### Menú Herramientas
-![Menu](img/Menu-Herramientas.JPG)
-
 
