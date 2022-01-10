@@ -1,16 +1,6 @@
 # ONLINEOFFICE.ES ❤️
 Se trata de una aplicación destinada a los trabajadores de oficina, en la cual habrán diferentes herramientas para facilitarles el día a día. Como notas, listas de tareas etc... Además, me gustaría que se pudieran crear equipos de trabajo en los que se puedan compartir estas utilidades y utilizarlas en conjunto.
 Podéis acceder a la versión online: https://onlineoffice.es/
-#### Portada 
-![portada](img/portada.JPG)
-#### Administración
-![Administrador](img/Administrador.JPG)
-#### Administración Tema Oscuro
-![Administrador](img/Administrador-Dark.JPG)
-#### Menú
-![Menu](img/Menu.JPG)
-#### Menú Herramientas
-![Menu](img/Menu-Herramientas.JPG)
 ## OBJETIVOS 🎈
 Por medio de github y la comunidad, ampliar y corregir el proyecto. Se pueden aportar más utilidades, añadir algún pequeño juego, corregir algún bug o aportar mejoras de cualquier tipo. 
 Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, asignarla, crearse una rama para corregirla, solicitar un pull requests, discutirlo y añadirlo a la rama principal para subirlo en el servidor.
@@ -85,6 +75,16 @@ Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) 
 ---
 ⌨️ con ❤️ por [EleazarRC](https://github.com/EleazarRC) 😊
 
-
+## Galería
+#### Portada 
+![portada](img/portada.JPG)
+#### Administración
+![Administrador](img/Administrador.JPG)
+#### Administración Tema Oscuro
+![Administrador](img/Administrador-Dark.JPG)
+#### Menú
+![Menu](img/Menu.JPG)
+#### Menú Herramientas
+![Menu](img/Menu-Herramientas.JPG)
 
 
