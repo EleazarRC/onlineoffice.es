@@ -1,8 +1,6 @@
-<?php foreach($errores as $error): ?>
-    <div class="alerta error">
-        <?php echo $error; ?>
-    </div>
-<?php endforeach; ?>
+<?php
+include_once __DIR__ . '/templates/alertas.php';
+?>
 <!--$_SESSION['usuario']  $_SESSION['login'] $saludo-->
 
 <div class="contenedor equipo">
