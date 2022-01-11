@@ -35,7 +35,7 @@ git clone https://github.com/EleazarRC/onlineoffice.es.git
 ```
 ### DESCARGA DE LA BASE DE DATOS v1.0.1 🍳
 - Nombre de la base de datos: onlineoffice
-- Usuario: colaborador@colaborador.com
+- Usuario: colaborador@colaborador.es
 - Contraseña: colaborador
 - La base de datos está disponible para bajar [aquí](https://gist.github.com/EleazarRC/f2676bad889dd217aa8c6cafda780da1)
 > Estos datos de usuario no sirven para https://onlineoffice.es/, tendrás que crear una cuenta cuando esté
