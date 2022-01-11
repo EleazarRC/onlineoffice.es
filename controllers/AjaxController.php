@@ -5,7 +5,7 @@ namespace Controllers;
 // Como LA PAGINA NO SE RECARGA AL LLAMAR A AJAX NO HAY
 // QUE PASAR EL ROUTE :->
 //use MVC\Router;
-use Model\Usuarios;
+use Model\Usuario;
 use Controllers\PaginasController;
 
 class AjaxController
@@ -40,7 +40,7 @@ class AjaxController
 
             
 
-            $usuarios = new Usuarios();
+            $usuarios = new Usuario();
             // Obtenemos el total de registros
             $info = $usuarios->obtenerInfoUsuarios();
 

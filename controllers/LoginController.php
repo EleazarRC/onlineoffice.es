@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
-use Model\Usuarios;
+use Model\Usuario;
 
 class LoginController {
 
@@ -13,7 +13,7 @@ class LoginController {
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $auth = new Usuarios($_POST);
+            $auth = new Usuario($_POST);
 
             $alertas = $auth->validar();
 
@@ -24,7 +24,7 @@ class LoginController {
                 $resultado = $auth->existeUsuario();
 
                 if( !$resultado ) {
-                    $alertas = Usuarios::getalertas();
+                    $alertas = Usuario::getalertas();
                 } else {
 
                     $auth->comprobarPassword($resultado);
@@ -39,7 +39,7 @@ class LoginController {
 
                        $auth->autenticar();
                     } else {
-                        $alertas = Usuarios::getalertas();
+                        $alertas = Usuario::getalertas();
                     }
                 }
             }  
