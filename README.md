@@ -37,7 +37,7 @@ git clone https://github.com/EleazarRC/onlineoffice.es.git
 Nombre de la base de datos: onlineoffice
 - Usuario:                    colaborador@colaborador.com
 - Contraseña:                 colaborador 
-- base de datos:              https://gist.github.com/EleazarRC/b415439face9550f860bc7aee47f3dcb
+- base de datos:              https://gist.github.com/EleazarRC/f2676bad889dd217aa8c6cafda780da1
 > Estos datos de usuario no sirven para https://onlineoffice.es/, tendrás que crear una cuenta cuando esté
 disponible (pronto) o pídeme una si necesitas revisar algo.
 ### Pre-requisitos 📋
