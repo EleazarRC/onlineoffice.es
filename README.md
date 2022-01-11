@@ -73,7 +73,7 @@ Mira los [tags en este repositorio](https://github.com/EleazarRC/onlineoffice.es
 * **Eleazar Ramos** - *Trabajo Inicial* - [EleazarRC](https://github.com/EleazarRC)
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/EleazarRC/onlineoffice.es/graphs/contributors) quíenes han participado en este proyecto. 
 ## Licencia 📄
-Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) para detalles
+Este proyecto está bajo la Licencia (GPLv3) - mira el archivo [LICENSE](LICENSE) para detalles
 ## Expresiones de Gratitud 🎁
 * Comenta a otros sobre este proyecto 📢
 ---
