@@ -17,60 +17,46 @@ class LoginController {
 
             $alertas = $auth->validar();
 
-            // Si no hay alertas autentificamos
-            // Y redirigimos zona privada
+            // Validación datos insertados
             if (empty($alertas)) {
-                
+
                 $resultado = $auth->existeUsuario();
+                $alertas = Usuario::getalertas();
 
-                if( !$resultado ) {
-                    $alertas = Usuario::getalertas();
-                } else {
-
+                // Validación usuario
+                if( !$alertas ) {
                     $auth->comprobarPassword($resultado);
 
-                    if($auth->autenticado) {
+                        // Validación Password
+                        if($auth->autenticado) {
 
+                        // Comprobar login y loguear
                         $id = $auth->obtenerIdByEmail();
-
-                        // ¿Es administrador?
                         $esAdministrador = $auth->esAdministrador($id[0]->id);
                         $auth->administrador = $esAdministrador[0]->administrador;
-
-                       $auth->autenticar();
-                    } else {
-                        $alertas = Usuario::getalertas();
-                    }
-                }
-            }  
-
-            // Si hay alertas redirigimos con alertas.
+                        $auth->autenticar();   
+                    } // Validación password
+                } // Validación Usuario
+            } // Validación de datos insertados  
+            // Si no pasa las Validaciones
             $router->render('auth/login', [
                 'alertas' => $alertas,
-                'correo' => 'sixen25@gmail.com',
+                'correo' => '',
                 'header' => 'ocultar'
             ]); 
-
-            //Echo 'Página en construcción para más información sixen25@gmail.com';
-    
-
+          // Si la petición no es POST
         } else {  
-
             $router->render('auth/login', [
                 'alertas' => $alertas,
                 'correo' => '',
                 'header' => 'ocultar'           
             ]);
-
-        }   
-
-       
-    }
-
-
-
-    
-    
+        }       
+    } // Fin function login
+ 
+    /**
+     * Función para desloguear
+     */
     public static function logout() {
         session_start();
         $_SESSION = [];
