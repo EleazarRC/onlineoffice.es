@@ -34,7 +34,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 git clone https://github.com/EleazarRC/onlineoffice.es.git
 ```
 ### DESCARGA DE LA BASE DE DATOS v1.0.1 🍳
-Nombre de la base de datos: dbs5134450
+Nombre de la base de datos: onlineoffice
 - Usuario:                    colaborador@colaborador.com
 - Contraseña:                 colaborador 
 - base de datos:              https://gist.github.com/EleazarRC/b415439face9550f860bc7aee47f3dcb
