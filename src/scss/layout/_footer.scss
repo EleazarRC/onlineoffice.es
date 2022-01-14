@@ -5,7 +5,7 @@ footer {
     background-color: v.$blanco;
     border-top: 2px solid v.$negro;
     //box-shadow: 2px 2px 10px #666;
-    margin-top: 0;
+    margin-top: v.$separacion;
     p{
         padding-top: calc(v.$separacion / 2 );
         margin: 0;

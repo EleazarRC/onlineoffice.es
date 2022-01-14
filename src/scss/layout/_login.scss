@@ -32,6 +32,7 @@ video {
     width: auto;
     display: block;
 
+
     @include m.desktop {
       width: 100%;
     }
@@ -132,8 +133,10 @@ video {
   }
 }
 
-
-
+.section-tittle{
+  margin-top: v.$separacion;
+  margin-bottom: v.$separacion;
+}
 
 #caracteristicas {
   display: flex;
@@ -151,24 +154,32 @@ video {
     button {
       display: block;
       margin: 0 auto;
+      width: 50%;
+      text-transform: uppercase;
       margin-top: calc(v.$separacion /2);
       margin-bottom: calc(v.$separacion /2);
+     
+    }
+    .sombra {
+        box-shadow: 1px 1px 5px #666;
     }
 
     p {
       text-align: justify;
+      font-size: 1.6rem;
     }
   }
   
   @include m.tablet {
     margin: 0 auto;
-    @include m.grid(2, 2);
+    @include m.grid(2, 1fr);
     align-items: flex-start;
+    justify-items: center;
     width: 95%;
   }
 
    @include m.desktop {
-    @include m.grid(4, 2);
+    @include m.grid(4, 1fr);
 
   }
   
