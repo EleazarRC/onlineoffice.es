@@ -15,6 +15,9 @@
 .boton-rojo {
     @include m.boton(v.$rojoClaro, inline-block);
 }
+.boton-rojo:hover{
+    color: black;
+}
 
 .boton-rojo-block {
    @include m.boton(v.$rojo, block);
@@ -24,18 +27,62 @@
     @include m.boton(v.$verde, block);
 }
 
+#btns-login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+    a {
+        font-size: 1.2rem;
+        @include m.tablet {
+            font-size: 1.4rem; 
+        }
+        @include m.tablet {
+            font-size: 1.6rem; 
+        }
+    }
+
+    @include m.tablet {
+        flex-direction: row;
+        justify-content:space-evenly;
+    }
+}
+
+
+
 .boton-login {
 
     @include m.boton(v.$negro, block);
+    font-size: 1.2rem;
     border-radius: 3rem;
+    width:70%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    
+    @include m.tablet {
+        width:33%;
+    }
+ 
+     /* @include m.boton(v.$negro, block);
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    margin-left: v.$separacion;
+    display: flex;
+    flex-direction:column;
+    align-items: center; */
     
 }
 
 .boton-login:hover{
 
-    @include m.boton(v.$blanco, block);
     color: v.$negro;
-    box-shadow: 1px 1px 3px v.$negro;
+    background-color: v.$blanco;
+   /*  @include m.boton(v.$blanco, block);
+    color: v.$negro;
+    box-shadow: 1px 1px 3px v.$negro; */
 }
 
 .botones {

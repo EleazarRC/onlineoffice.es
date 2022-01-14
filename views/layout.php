@@ -50,11 +50,11 @@
 
     <p> <?php echo 'Hola, <span>' . $_SESSION['usuario'] .'</span>' ?></p>
 
-    <img id="abrirMenu" class="menu" src="/build/img/widgets_black_18dp.svg">
+    <img id="abrirMenu" class="menu" src="/build/img/widgets_black_18dp.svg" alt="abrir el menú">
 
     <a href="/index.php/logout"> Salir</a>
 
-    <img class="dark-mode-boton" src="/build/img/dark-mode.svg">
+    <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="Cambiar la vista a modo oscuro o claro">
    
 </div>
     
@@ -66,6 +66,9 @@
  ?>
 
 <footer class="container-fluid">
+    <div class='izquierda'>
+            <a class="boton-rojo" href="mailto:sixen25@gmail.com">¿Problemas de accesibilidad?</a>
+    </div>
 <div>
     <h2>Sixen25@gmail.com</h2>
 </div>
