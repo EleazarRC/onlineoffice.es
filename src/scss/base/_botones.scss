@@ -33,16 +33,6 @@
     text-align: center;
     align-items: center;
     
-    a {
-        font-size: 1.2rem;
-        @include m.tablet {
-            font-size: 1.4rem; 
-        }
-        @include m.tablet {
-            font-size: 1.6rem; 
-        }
-    }
-
     @include m.tablet {
         flex-direction: row;
         justify-content:space-evenly;
