@@ -192,8 +192,6 @@ function modalListener() {
   });
 }
 
-
 function eventListeners() {
-   
  
 }

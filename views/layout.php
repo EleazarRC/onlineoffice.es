@@ -66,17 +66,17 @@
  ?>
 
 <footer class="container-fluid">
-    <div class='izquierda'>
-            <a class="boton-rojo" href="mailto:sixen25@gmail.com">¿Problemas de accesibilidad?</a>
+    <div>
+        <h2>Sixen25@gmail.com</h2>
     </div>
-<div>
-    <h2>Sixen25@gmail.com</h2>
-</div>
+    <div>
+        <a class="boton-rojo" href="mailto:sixen25@gmail.com">¿Problemas de accesibilidad?</a>
+    </div>
 </footer>
 
 <!--<script src="./build/js/bundle.min.js"></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="/build/js/bundle.min.js"></script>
 

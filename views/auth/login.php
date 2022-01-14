@@ -52,30 +52,33 @@
                 <img src="build/img/notas.webp" alt="Imagen de una nota">
                 <h3>Notas</h3>
                 <p>Crea notas y si quieres, compártelas entre los miembros de tu equipo de trabajo ¡Que no se os pase nada!</p>
-                <button class="boton-login sombra">Registro</button>
+                <button class="boton-login sombra" onclick="document.location='/registro'">Registro</button>
             </div>
             <div>
                 
                 <img src="build/img/tareas.webp" alt="Imagen con una lista de tareas">
                 <h3>Tareas</h3>
                 <p>Organízate las tareas o organiza las de tu equipo para llevarte a ti y a tu empresa a otro nivel ¡Optimiza el tiempo!</p>
-                <button class="boton-login sombra"> Registro</button>
+                <button class="boton-login sombra" onclick="document.location='/registro'"> Registro</button>
             </div>
             <div>
                 
                 <img src="build/img/github.webp" alt="Logo de github">
                 <h3>Repositorio</h3>
                 <p> Participar en el proyecto, aportando nuevas funcionalidades, corrigiendo errores o participando en el foro. </p>
-                <button class="boton-login sombra"> repositorio</button>
+                <button class="boton-login sombra" onclick="document.location='https://github.com/EleazarRC/onlineoffice.es'"> repositorio</button>
             </div>
             <div>
                
                 <img src="build/img/GPLv3.webp" alt="Logo de la licencia GPLv3">
                 <h3>Licencia</h3>
                 <p>¿Quieres instalarlo la app en tu propio servidor y hacer las modificaciones que necesites? ¡Descarga el proyecto! </p>
-                <button class="boton-login sombra"> Descarga</button>
+                <button class="boton-login sombra" onclick="document.location='https://github.com/EleazarRC/onlineoffice.es/blob/main/LICENSE'"> Descarga</button>
             </div>
 
 
         </div>
     </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/build/js/animacionesInicio.js"></script>
