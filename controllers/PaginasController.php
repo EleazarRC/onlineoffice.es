@@ -50,7 +50,7 @@ class PaginasController
 
                 $usuario = new Usuario($_POST['usuario']);
                 $usuario->administrador = intval($_POST['taskOption']);
-
+                
                 $usuario->sincronizar($usuario); 
 
                 $alertas = $usuario->validarNuevaCuenta();  
@@ -76,7 +76,7 @@ class PaginasController
                     } else {
 
                         $usuario->hashPassword();
-
+                        $usuario->confirmado = 1;
    
                         $resultado = $usuario->guardar();
                         

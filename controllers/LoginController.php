@@ -54,6 +54,72 @@ class LoginController {
         }       
     } // Fin function login
  
+    public static function registro(Router $router){
+
+        $alertas = [];
+        
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+            $newUser = new Usuario($_POST['usuario']);
+            $newUser->puntos = 1;
+
+            $newUser->sincronizar($newUser);
+            $alertas = $newUser->validarNuevaCuenta();  
+            $alertas = $newUser->getAlertas();
+
+            if(empty($alertas)){
+                // Continuamos con el registro
+                $resultado = $newUser->existeUsuario();
+
+                if ($resultado->num_rows != null) {
+                    $alertas = $newUser->getAlertas();
+                    $alertas['error'][] = $newUser->email . ' ya esta registrado ';
+                    
+                    $router->render('auth/registro', [
+                        'alertas' => $alertas,
+                        'header' => 'ocultar',
+                        'usuario' => $newUser,
+                    ]);
+                } else {
+
+                    $newUser-> hashPassword();
+
+                    $newUser-> crearToken();
+
+                    $resultado = $newUser->guardar();
+
+                    // ¿Dónde lo llevo?
+                }
+
+
+
+            } else {
+                // Mandamos alertas y usuario
+                $router->render('auth/registro', [
+                    'alertas' => $alertas,
+                    'header' => 'ocultar',
+                    'usuario' => $newUser,
+                ]);
+
+            }
+
+
+
+          // La petición no es post
+        } else {
+            
+            $router->render('auth/registro', [
+                'alertas' => $alertas,
+                'usuario' => '',
+                'header' => 'ocultar'           
+            ]);
+        }      
+    }
+
+
+
+
+
     /**
      * Función para desloguear
      */

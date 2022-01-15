@@ -9,13 +9,16 @@ use Controllers\AjaxController;
 
 $router = new Router();
 
-
 // LOGIN
 //$router->get('/index.php', [LoginController::class, 'login']);
 //$router->post('/index.php', [LoginController::class, 'login']);
 $router->get('', [LoginController::class, 'login']);
 $router->post('', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
+
+//Registro
+$router->get('/registro', [LoginController::class, 'registro']);
+$router->post('/registro', [LoginController::class, 'registro']);
 
 // Panel Principal
 $router->get('/panelprincipal', [PaginasController::class, 'panelprincipal']);

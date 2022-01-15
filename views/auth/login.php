@@ -26,9 +26,11 @@
 
                     <div id="btns-login">
                     <input  class="boton-login" type="submit" value="Entrar">
-                    <input formaction="./registro" class="boton-login" type="submit" value="Regístrate">                    </div>
+                    <!-- <input formaction="./index.php/registro" class="boton-login" type="submit" value="Regístrate">    -->                 
+                        <a href="./index.php/registro" class="boton-login">Regístrate</a>
+                    </div>
                 </form>
-                    <p id="recuperar"><a href="./recuperar">¿Has olvidado  tu contraseña?</a></p>
+                    <p id="recuperar"><a href="./index.php/recuperar">¿Has olvidado  tu contraseña?</a></p>
             </div>
             <!-- Fin Zona Registro -->
         </div>

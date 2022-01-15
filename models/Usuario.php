@@ -15,7 +15,9 @@ class Usuario extends ActiveRecord
      'email',
      'password',
      'puntos',
-     'administrador'
+     'administrador',
+     'confirmado',
+     'token'
     ];
 
     public $id;
@@ -25,6 +27,8 @@ class Usuario extends ActiveRecord
     public $password;
     public $puntos;
     public $administrador;
+    public $confirmado;
+    public $token;
 
     public function __construct($args = [])
     {
@@ -35,6 +39,8 @@ class Usuario extends ActiveRecord
         $this->password = $args['password'] ?? '';
         $this->puntos = $args['puntos'] ?? '';
         $this->administrador = $args['administrador'] ?? 0;
+        $this->confirmado = $args['confirmado'] ?? 0;
+        $this->token = $args['token'] ?? '';
     }
 
     public function validar()
@@ -107,6 +113,13 @@ class Usuario extends ActiveRecord
     public function hashPassword() {
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }
+
+    public function crearToken() {
+        $this->token = uniqid();
+    }
+
+
+
 
     public function comprobarPassword($resultado)
     {
