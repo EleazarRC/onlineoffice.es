@@ -20,6 +20,10 @@ $router->get('/logout', [LoginController::class, 'logout']);
 $router->get('/registro', [LoginController::class, 'registro']);
 $router->post('/registro', [LoginController::class, 'registro']);
 
+// Confirmar cuenta
+$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
+$router->get('/mensaje', [LoginController::class, 'mensaje']);
+
 // Panel Principal
 $router->get('/panelprincipal', [PaginasController::class, 'panelprincipal']);
 
