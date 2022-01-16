@@ -9,13 +9,27 @@ use Controllers\AjaxController;
 
 $router = new Router();
 
-
 // LOGIN
 //$router->get('/index.php', [LoginController::class, 'login']);
 //$router->post('/index.php', [LoginController::class, 'login']);
 $router->get('', [LoginController::class, 'login']);
 $router->post('', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
+
+//Registro
+$router->get('/registro', [LoginController::class, 'registro']);
+$router->post('/registro', [LoginController::class, 'registro']);
+
+//Recuperar contraseña
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
+$router->get('/cambiar-password', [LoginController::class, 'cambiarPassword']);
+$router->post('/cambiar-password', [LoginController::class, 'cambiarPassword']);
+
+
+// Confirmar cuenta
+$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
+$router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 // Panel Principal
 $router->get('/panelprincipal', [PaginasController::class, 'panelprincipal']);

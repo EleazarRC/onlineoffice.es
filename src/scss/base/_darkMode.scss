@@ -129,7 +129,7 @@
         input:not([type="submit"]), 
         textarea,
         select {
-            background-color: v.$negroClaro;
+            background-color: rgba(0, 0, 0, 0.5);
             border: 2px solid v.$blanco;
             color: v.$blanco;
         }

@@ -18,6 +18,10 @@ class ActiveRecord {
         self::$db = $database;
     }
 
+    public static function setAlerta($tipo, $mensaje){
+        static::$alertas[$tipo][] = $mensaje;
+    }
+
     // Validación
     public static function getalertas() {
         return static::$alertas;
@@ -76,6 +80,17 @@ class ActiveRecord {
 
         return array_shift( $resultado ) ;
     }
+
+    // Busca un registro por su id
+    public static function where($columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
+    
+        $resultado = self::consultarSQL($query);
+    
+        return array_shift( $resultado ) ;
+    }
+
+
 
     public static function get($limite) {
         $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";

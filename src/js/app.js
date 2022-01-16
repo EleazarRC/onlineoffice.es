@@ -192,8 +192,17 @@ function modalListener() {
   });
 }
 
-
 function eventListeners() {
-   
- 
+  
+
+
+  
+  // Para redirigir a la pantalla de inicio al tocar el logo
+  if(document.querySelector(".registro-header h1")) {
+    let myH1 = document.querySelector(".registro-header h1");
+    myH1.addEventListener("click", function (e) {
+      window.location.href = '/';
+    }); 
+  } 
+
 }

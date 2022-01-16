@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use Model\Usuarios;
+use Model\Usuario;
 use MVC\Router;
 
 class PaginasController
@@ -48,9 +48,9 @@ class PaginasController
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-                $usuario = new Usuarios($_POST['usuario']);
+                $usuario = new Usuario($_POST['usuario']);
                 $usuario->administrador = intval($_POST['taskOption']);
-
+                
                 $usuario->sincronizar($usuario); 
 
                 $alertas = $usuario->validarNuevaCuenta();  
@@ -76,7 +76,7 @@ class PaginasController
                     } else {
 
                         $usuario->hashPassword();
-
+                        $usuario->confirmado = 1;
    
                         $resultado = $usuario->guardar();
                         
@@ -117,7 +117,7 @@ class PaginasController
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                $usuario = new Usuarios($_POST['usuario']);
+                $usuario = new Usuario($_POST['usuario']);
                 $usuario->administrador = intval($_POST['taskOption']);
                 $usuario->sincronizar($_POST['usuario']);
 
@@ -155,7 +155,7 @@ class PaginasController
 
             } else { // la petición es de tipo GET
 
-                $usuario = new Usuarios();
+                $usuario = new Usuario();
                 $usuario = $usuario->find($_GET['usuario']);
                 $usuario->password = '';
 
@@ -171,7 +171,7 @@ class PaginasController
 
     public static function  borrarUsuario(){
 
-        $usuario = new Usuarios();
+        $usuario = new Usuario();
         $usuario->id = $_GET['id'];
         $usuario->eliminar(); 
         

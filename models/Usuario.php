@@ -2,11 +2,11 @@
 
 namespace Model;
 
-class Usuarios extends ActiveRecord
+class Usuario extends ActiveRecord
 {
 
     // Base DE DATOS
-    protected static $tabla = 'usuarios';
+    protected static $tabla = 'usuario';
     protected static $columnasDB = 
     [
      'id',
@@ -15,7 +15,9 @@ class Usuarios extends ActiveRecord
      'email',
      'password',
      'puntos',
-     'administrador'
+     'administrador',
+     'confirmado',
+     'token'
     ];
 
     public $id;
@@ -25,6 +27,8 @@ class Usuarios extends ActiveRecord
     public $password;
     public $puntos;
     public $administrador;
+    public $confirmado;
+    public $token;
 
     public function __construct($args = [])
     {
@@ -35,6 +39,8 @@ class Usuarios extends ActiveRecord
         $this->password = $args['password'] ?? '';
         $this->puntos = $args['puntos'] ?? '';
         $this->administrador = $args['administrador'] ?? 0;
+        $this->confirmado = $args['confirmado'] ?? 0;
+        $this->token = $args['token'] ?? '';
     }
 
     public function validar()
@@ -86,6 +92,15 @@ class Usuarios extends ActiveRecord
             self::$alertas['error'][] = 'El usuario debe tener al menos 1 punto';
         }
     }
+    
+    public function validarCambioPassword() {
+        if(!$this->password) {
+            self::$alertas['error'][] = 'El Password es Obligatorio';
+        }
+        if(strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
+        }
+    }
 
     public function obtenerIdByEmail() {
         $query = "SELECT id FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
@@ -108,6 +123,13 @@ class Usuarios extends ActiveRecord
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }
 
+    public function crearToken() {
+        $this->token = uniqid();
+    }
+
+
+
+
     public function comprobarPassword($resultado)
     {
         $usuario = $resultado->fetch_object();
@@ -123,6 +145,15 @@ class Usuarios extends ActiveRecord
     public function esAdministrador($id){
         
         $query = "SELECT administrador FROM " . self::$tabla . " WHERE id = " .$id;
+
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+
+    }
+
+    public function estaVerificado($id){
+        
+        $query = "SELECT confirmado FROM " . self::$tabla . " WHERE id = " .$id;
 
         $resultado = self::consultarSQL($query);
         return $resultado;
