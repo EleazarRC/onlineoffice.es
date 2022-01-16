@@ -43,10 +43,11 @@ class Email {
         $contenido .= "<p><strong>Hola, " . $this->email . "</strong> Has creado tu cuenta en
         onlineOffice.es, solo debes confirmarla presionando el siguiente enlace.</p>";
         //TODO: CAMBIAR EL ENLACE PARA SERVIDOR!
-        $contenido .= "<p>Ahora ya puedes: <a href='http://localhost/index.php/confirmar-cuenta?token="
+        $contenido .= "<p>Ahora ya puedes: <a href='https://onlineoffice.es/index.php/confirmar-cuenta?token="
         . $this->token . "'>Confirmar Tu Cuenta</a></p>";
         $contenido .= "<p>Si no solicitaste esta cuenta, puedes ignorar este mensaje</p>";
         $contenido .= '</html>';
+
         $mail->Body = $contenido;
         $mail->send();
     }   
@@ -77,7 +78,7 @@ class Email {
         $contenido .= "<p><strong>Hola, " . $this->email . "</strong> Has pedido cambiar tu contraseña en
         onlineOffice.es, solo debes seguir el siguiente enlace.</p>";
         //TODO: CAMBIAR EL ENLACE PARA SERVIDOR!
-        $contenido .= "<p>Pulsa en el siguiente enlace: <a href='http://localhost/index.php/cambiar-password?token="
+        $contenido .= "<p>Pulsa en el siguiente enlace: <a href='https://onlineoffice.es/index.php/cambiar-password?token="
         . $this->token . "'>Cambiar contraseñas</a></p>";
         $contenido .= "<p>Si no solicitaste este cambio, puedes ignorar este mensaje</p>";
         $contenido .= '</html>';
