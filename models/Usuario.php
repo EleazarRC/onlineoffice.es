@@ -151,6 +151,15 @@ class Usuario extends ActiveRecord
 
     }
 
+    public function estaVerificado($id){
+        
+        $query = "SELECT confirmado FROM " . self::$tabla . " WHERE id = " .$id;
+
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+
+    }
+
 
 
     public function autenticar()

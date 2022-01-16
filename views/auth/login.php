@@ -49,7 +49,7 @@
         <h2 class="section-tittle"> Disfruta de todas estas características</h2>
 
         <div id="caracteristicas">        
-            <div>
+            <div >
 
                 <img src="build/img/notas.webp" alt="Imagen de una nota">
                 <h3>Notas</h3>

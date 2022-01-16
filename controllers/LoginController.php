@@ -24,6 +24,7 @@ class LoginController
             if (empty($alertas)) {
 
                 $resultado = $auth->existeUsuario();
+
                 $alertas = Usuario::getalertas();
 
                 // Validación usuario
@@ -36,9 +37,26 @@ class LoginController
 
                         // Comprobar login y loguear
                         $id = $auth->obtenerIdByEmail();
-                        $esAdministrador = $auth->esAdministrador($id[0]->id);
-                        $auth->administrador = $esAdministrador[0]->administrador;
-                        $auth->autenticar();
+
+                        $verificado = $auth->estaVerificado($id[0]->id);
+
+                        if($verificado[0]->confirmado){
+
+                            $esAdministrador = $auth->esAdministrador($id[0]->id);
+                            $auth->administrador = $esAdministrador[0]->administrador;
+                            $auth->autenticar();
+
+                        } else {
+
+                            $alertas['error'][] = ' Tienes que validad la cuenta en tu correo ';
+                            $router->render('auth/login', [
+                            'alertas' => $alertas,
+                            'correo' => '',
+                            'header' => 'ocultar',
+                        ]);
+
+                        }
+
                     } else {
                         $alertas['error'][] = ' Contraseña no válida ';
                         $router->render('auth/login', [
