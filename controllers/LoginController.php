@@ -30,6 +30,7 @@ class LoginController
                 if (!$alertas) {
                     $auth->comprobarPassword($resultado);
 
+       
                     // Validación Password
                     if ($auth->autenticado) {
 
@@ -38,7 +39,16 @@ class LoginController
                         $esAdministrador = $auth->esAdministrador($id[0]->id);
                         $auth->administrador = $esAdministrador[0]->administrador;
                         $auth->autenticar();
+                    } else {
+                        $alertas['error'][] = ' Contraseña no válida ';
+                        $router->render('auth/login', [
+                            'alertas' => $alertas,
+                            'correo' => '',
+                            'header' => 'ocultar',
+                        ]);
                     } // Validación password
+                    
+                    //Usuario::setAlerta('exito', 'Cuenta Activada Correctamente');
                 } // Validación Usuario
             } // Validación de datos insertados
             // Si no pasa las Validaciones
@@ -159,6 +169,106 @@ class LoginController
             'header' => 'ocultar',
         ]);
     }
+
+
+
+    public static function recuperar(Router $router){
+
+        $alertas = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            //¿Existe el usuario?
+            //$email = $_POST['usuario']['email'];
+            $usuario = New Usuario();
+            $usuario->email = $_POST['usuario']['email'];
+
+            $resultado = $usuario->existeUsuario();
+
+
+            if ($resultado->num_rows != null) {
+                       
+               $id = $usuario->obtenerIdByEmail();          
+               $usuario = $usuario->find($id[0]->id);
+               $usuario->password = '';
+               $usuario->confirmado = 0;
+               $usuario->crearToken();
+               $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+               $email->enviarCambioPassword();
+               $resultado = $usuario->guardar(); 
+                // ¿Dónde lo llevo?
+                $router->render('auth/mensaje', [
+                    'header' => 'ocultar',
+                ]);
+
+            } else {
+                $alertas['error'][] = $usuario->email . ' este email no está registrado ';
+                $router->render('auth/recuperar', [
+                    'header' => 'ocultar',
+                    'alertas' => $alertas
+                ]);
+            }
+           
+        } else {
+            $router->render('auth/recuperar', [
+                'header' => 'ocultar',
+                'alertas' => $alertas
+            ]);
+        }
+  
+    }
+
+    public static function cambiarPassword(Router $router) {
+
+        $alertas = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $usuario = new Usuario();
+            
+            $usuario->password = $_POST['usuario']['password'];
+
+            $usuario-> validarCambioPassword();
+
+            $alertas = $usuario->getAlertas();
+
+            if(empty($alertas)){
+                //$usuario = new Usuario();
+                $token = $_GET['token'];
+                $usuario= $usuario->where('token', $token);
+                $usuario->password = $_POST['usuario']['password'];
+                $usuario->hashPassword();
+                $usuario->guardar();
+                
+                $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                $email->enviarConfirmacion();
+                
+                $router->render('auth/mensaje', [
+                    'header' => 'ocultar',
+                    'alertas' => $alertas
+                ]);
+                
+            } else {
+               
+               $router->render('auth/cambiar-password', [
+                    'header' => 'ocultar',
+                    'alertas' => $alertas
+                ]);
+
+            }
+     
+         } else {
+
+            $router->render('auth/cambiar-password', [
+                'header' => 'ocultar',
+                'alertas' => $alertas
+            ]);
+        }
+
+    }
+
+
+
 
     /**
      * Función para desloguear

@@ -20,6 +20,13 @@ $router->get('/logout', [LoginController::class, 'logout']);
 $router->get('/registro', [LoginController::class, 'registro']);
 $router->post('/registro', [LoginController::class, 'registro']);
 
+//Recuperar contraseña
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
+$router->get('/cambiar-password', [LoginController::class, 'cambiarPassword']);
+$router->post('/cambiar-password', [LoginController::class, 'cambiarPassword']);
+
+
 // Confirmar cuenta
 $router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
 $router->get('/mensaje', [LoginController::class, 'mensaje']);

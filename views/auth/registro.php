@@ -4,8 +4,9 @@
     <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="Cambiar la vista a modo oscuro o claro">
 </div>
 <h2>Bienvenid@</h2>
+
 <?php
-                    include_once __DIR__ . '../../templates/alertas.php';
+    include_once __DIR__ . '../../templates/alertas.php';
 ?>
     <form
         class="formulario" 

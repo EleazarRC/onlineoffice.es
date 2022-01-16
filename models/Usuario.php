@@ -92,6 +92,15 @@ class Usuario extends ActiveRecord
             self::$alertas['error'][] = 'El usuario debe tener al menos 1 punto';
         }
     }
+    
+    public function validarCambioPassword() {
+        if(!$this->password) {
+            self::$alertas['error'][] = 'El Password es Obligatorio';
+        }
+        if(strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
+        }
+    }
 
     public function obtenerIdByEmail() {
         $query = "SELECT id FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
