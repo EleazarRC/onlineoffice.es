@@ -14,6 +14,7 @@ Siempre a través de flujo de trabajo de github. Abrir una issue, discutirla, as
 - También están los usuarios administradores y no administradores. Por seguridad, al menos de momento, online solo tendré administrador yo. Para que nadie entre y borre todos los usuarios. Ya veremos, si habrá que hacer otros tipos de administrador.
 - El modo oscuro, el cual usa cookies para guardar tus preferencias y está pensado para estos usuarios que pasan tantas horas enfrente del ordenador.
 - Además, dispone de un buscador de usuarios a tiempo real.
+- Registro de usuarios online con activación de correo.
 ## Conocimientos necesarios
 - HTML
 - CSS
@@ -38,8 +39,7 @@ git clone https://github.com/EleazarRC/onlineoffice.es.git
 - Usuario: colaborador@colaborador.es
 - Contraseña: colaborador
 - La base de datos está disponible para bajar [aquí](https://gist.github.com/EleazarRC/f2676bad889dd217aa8c6cafda780da1)
-> Estos datos de usuario no sirven para https://onlineoffice.es/, tendrás que crear una cuenta cuando esté
-disponible (pronto) o pídeme una si necesitas revisar algo.
+> Estos datos de usuario no sirven para https://onlineoffice.es/, tendrás que crear una cuenta.
 ### Pre-requisitos 📋
 _Que cosas necesitas para instalar el proyecto y como instalarlas_
 
