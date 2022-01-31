@@ -8,12 +8,15 @@ video {
   height: 100vh;
   width: 100%;
   object-fit: fill; // use "cover" to avoid distortion
+  overflow: hidden;
 }
 .video {
   position: relative;
+  overflow: hidden;
 
   .overlay {
     position: absolute;
+    overflow: hidden;
     top: 0;
     left: 0;
     height: 100vh;

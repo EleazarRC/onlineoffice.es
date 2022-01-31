@@ -15,6 +15,12 @@ footer {
     min-height: 100px;
     height: auto;
 
-    @include m.grid(2, 1fr)
+    @include m.tablet {
+        @include m.grid(2, 1fr);  
+    }
+    //@include m.grid(2, 1fr)
+
+
+    
 }
 
