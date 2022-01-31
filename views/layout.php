@@ -18,6 +18,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="/build/css/app.css">
+    <link rel="shortcut icon" href="/build/img/favicon.ico" />
     <title>OnlineOffice.es</title>
 </head>
 <body>
@@ -28,10 +29,8 @@
             <ul>
             <li><a href="/index.php/panelprincipal">Panel Principal</a></li>
                 <li><a href="/index.php/notas">Notas</a></li>
-                <li><a href="/index.php/agenda">Agenda</a></li>
                 <li><a href="/index.php/equipo">Mi equipo</a></li>
                 <?php echo $_SESSION['administrador'] === "1" ? '<li><a href="/index.php/admin">Administración</a></li>': ''; ?> 
-                <li><a href="/index.php/configuracion">Configuración</a></li>
             </ul>
             <div id="btnSalir" class="btnSalir center">
                 <!--<a href="/index.php/logout">SALIR</a>-->
